@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Säker Webkomunikation</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+    <script src="app.js"></script>
+    <div class="container" id="loginPrompt">
+        <form method="post">
+            Username:<br>
+            <input id="user" type="text" name="user" placeholder="User" required><br><br>
+            Password:<br>
+            <input id="password" type="password" name="password" placeholder="Password" required><br><br>
+            <input type="submit" value="Log in" onclick=login() ><br><br>
+            <div class="frc-captcha" data-sitekey="FCMSFGFENTPVDT36"></div><br>
+            <div class="g-recaptcha" data-sitekey="6Lcn3SEeAAAAAAdksuKRtgdHirihY5qAZSKq9WTX"></div>
+        </form>
+    </div>
+    <div class="container" id="mainPage">
+        <h1>Succesfully logged in!</h1>
+        <input type="submit" value="ROLL TWO DICES" onclick=rollDice()>
+        <h2 id="dices"></h2>
+        <input type="submit" value="Log out" onclick=logout() ><br><br>
+    </div>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/friendly-challenge@0.9.0/widget.module.min.js" async defer></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/friendly-challenge@0.9.0/widget.min.js" async defer></script>
+
+    <!-- GDPR HTML -->
+    <br><br><br><br>
+    <div id="gdpr" class="hidden">
+        <h2>This website uses cookies</h2>
+        Here are some generic GDPR senteces: We use cookies to personalise content and ads, to provide social media features and to analyse our traffic. We also share information about your use of our site with our social media, advertising and analytics partners who may combine it with other information that you’ve provided to them or that they’ve collected from your use of their services.
+        <br><br>
+        <button class="gdpr-btn" id="gdpr-accept">Accept</button>
+        <button class="gdpr-btn" id="gdpr-cancel">Cancel</button>
+    </div>
+</body>
+</html>
