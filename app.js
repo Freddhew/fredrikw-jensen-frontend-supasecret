@@ -32,6 +32,7 @@ const checkPopup = () => !storageType.getItem(consentPropertyName);
 const saveToStorage = () => storageType.setItem(consentPropertyName, true);
 
 window.onload = () => {
+    changeBG2();
     const gdprWindow = document.getElementById("gdpr")
     const gdprAccept = document.getElementById("gdpr-accept")
     
@@ -47,6 +48,14 @@ window.onload = () => {
     }
 };
 
+function changeBG(){
+    document.body.style.background = "url('images/background.jpg')";
+}
+
+function changeBG2(){
+    document.body.style.background = "url('images/background3.jpg')";
+}
+
 function login() {
     let password = document.getElementById("password");
     let user = document.getElementById("user");
@@ -56,6 +65,7 @@ function login() {
     if (user.value === "user" && password.value === "password"){
         loginPrompt.style.display = "none";
         mainPage.style.display = "block";
+        changeBG();
     }
   }
 
@@ -65,6 +75,8 @@ function login() {
       let mainPage = document.getElementById("mainPage");
       loginPrompt.style.display = "block";
       mainPage.style.display = "none";
+      document.getElementById("dices").innerHTML = "";
+      changeBG2();
     }
 
 function randomIntFromInterval(min, max) {
